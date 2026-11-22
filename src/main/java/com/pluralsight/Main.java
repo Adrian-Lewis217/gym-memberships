@@ -1,16 +1,14 @@
 package com.pluralsight;
 
-import com.pluralsight.membership.BasicMembership;
-import com.pluralsight.membership.FamilyMembership;
-import com.pluralsight.membership.Membership;
-import com.pluralsight.membership.PremiumMembership;
+import com.pluralsight.membership.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== Gym Membership ===");
-
+        System.out.println("=== Gym Memberships ===");
+        ArrayList<Member> memberships = new ArrayList<>();
         /*Membership membership = new Membership("Henry Clark",3,new BigDecimal("30.00"));
 
         System.out.println(membership);*/
@@ -30,7 +28,7 @@ public class Main {
                 ,new BigDecimal("30.00"),3);
         FamilyMembership membership7 = new FamilyMembership ("Emma Wilson",6
                 ,new BigDecimal("30.00"),1);
-
+        /*
         // Display memberships
         System.out.println(membership1);
         System.out.println(membership2);
@@ -58,7 +56,36 @@ public class Main {
 
         System.out.println(membership6.getMemberName() +": Fee $" + membership6.getSignUpFee()
                 +", Total $" + membership6.getContractTotal());
+*/
+        // add all memberships to list
+        memberships.add(membership1);
+        memberships.add(membership2);
+        memberships.add(membership3);
+        memberships.add(membership4);
+        memberships.add(membership5);
+        memberships.add(membership6);
+        memberships.add(membership7);
 
+        // print the list
+        printCosts(memberships);
+    }
+    public static void printCosts(ArrayList<Member> members){
+        BigDecimal monthlyIncome = BigDecimal.ZERO;
+        BigDecimal allContracts = BigDecimal.ZERO;
+
+        for (Member member : members) {
+            System.out.println(member);
+
+            System.out.println("  Monthly Price: $" + member.getMonthlyPrice(member.getBaseRate()) +", Sign-Up Fee: $" + member.getSignUpFee()
+                    +", Contract Total: $" + member.getContractTotal());
+
+            monthlyIncome = monthlyIncome.add(member.getMonthlyPrice(member.getBaseRate()));
+            allContracts = allContracts.add(member.getContractTotal());
+        }
+        System.out.println("--- Totals ---");
+        System.out.println("Memberships: " + members.size());
+        System.out.println("Monthly income: " + monthlyIncome);
+        System.out.println("All contracts: " + allContracts);
 
     }
 }
