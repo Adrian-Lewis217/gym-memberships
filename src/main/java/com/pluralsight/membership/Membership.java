@@ -41,10 +41,6 @@ public abstract class Membership {
 
     @Override
     public String toString() {
-        return "Membership{" +
-                "memberName='" + memberName + '\'' +
-                ", months=" + months +
-                ", baseRate=" + baseRate +
-                '}';
+        return memberName + ", " + months + " months" + ", $" + baseRate + " per month";
     }
 }
