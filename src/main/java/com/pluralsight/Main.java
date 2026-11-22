@@ -100,5 +100,11 @@ public class Main {
             }
         }
 
+        // print the kinds for each membership
+        System.out.println("--- Kinds ---");
+        for (Member member : members) {
+            System.out.println(member.getMemberName() + ": " + member.getClass().getSimpleName());
+        }
+
     }
 }
