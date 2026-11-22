@@ -8,14 +8,15 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== Gym Memberships ===");
-        ArrayList<Member> memberships = new ArrayList<>();
+        ArrayList<Membership> memberships = new ArrayList<>();
         /*Membership membership = new Membership("Henry Clark",3,new BigDecimal("30.00"));
 
         System.out.println(membership);*/
 
         // Objects for Members
-        Membership membership1 = new Membership("Henry Clark",3
-                ,new BigDecimal("30.00"));
+        // java: com.pluralsight.membership.Membership is abstract; cannot be instantiated
+        /*Membership membership1 = new Membership("Henry Clark",3
+                ,new BigDecimal("30.00"));*/
         BasicMembership membership2 = new BasicMembership("Alice Johnson",6
                 ,new BigDecimal("30.00"),true);
         BasicMembership membership3 = new BasicMembership("Bob Smith",2
@@ -58,7 +59,7 @@ public class Main {
                 +", Total $" + membership6.getContractTotal());
 */
         // add all memberships to list
-        memberships.add(membership1);
+        //memberships.add(membership1);
         memberships.add(membership2);
         memberships.add(membership3);
         memberships.add(membership4);
@@ -69,11 +70,11 @@ public class Main {
         // print the list
         printCosts(memberships);
     }
-    public static void printCosts(ArrayList<Member> members){
+    public static void printCosts(ArrayList<Membership> members){
         BigDecimal monthlyIncome = BigDecimal.ZERO;
         BigDecimal allContracts = BigDecimal.ZERO;
 
-        for (Member member : members) {
+        for (Membership member : members) {
             System.out.println(member);
 
             System.out.println("  Monthly Price: $" + member.getMonthlyPrice(member.getBaseRate()) +", Sign-Up Fee: $" + member.getSignUpFee()
@@ -88,7 +89,7 @@ public class Main {
         System.out.println("All contracts: " + allContracts);
         System.out.println("--- Front desk notes ---");
 
-        for (Member member : members) {
+        for (Membership member : members) {
             if (member instanceof BasicMembership && ((BasicMembership) member).isOffPeakOnly()){
                 System.out.println(member.getMemberName() + ": entry between 10:00 and 16:00 only");
             } else if (member instanceof PremiumMembership) {
@@ -102,7 +103,7 @@ public class Main {
 
         // print the kinds for each membership
         System.out.println("--- Kinds ---");
-        for (Member member : members) {
+        for (Membership member : members) {
             System.out.println(member.getMemberName() + ": " + member.getClass().getSimpleName());
         }
 

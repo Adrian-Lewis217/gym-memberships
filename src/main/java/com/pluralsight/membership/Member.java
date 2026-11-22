@@ -1,8 +1,9 @@
+/*
 package com.pluralsight.membership;
 
 import java.math.BigDecimal;
 
-public abstract class Member {
+public class Member {
     private String memberName;
     private int months;
     private BigDecimal baseRate;
@@ -53,3 +54,4 @@ public abstract class Member {
         return "Membership" + " | " + memberName + " | " + months + " months";
     }
 }
+*/

@@ -2,7 +2,7 @@ package com.pluralsight.membership;
 
 import java.math.BigDecimal;
 
-public class BasicMembership extends Member{
+public class BasicMembership extends Membership{
     private boolean offPeakOnly = true;
 
     public boolean isOffPeakOnly() {

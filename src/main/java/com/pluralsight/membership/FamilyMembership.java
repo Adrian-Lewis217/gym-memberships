@@ -3,7 +3,7 @@ package com.pluralsight.membership;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class FamilyMembership extends Member{
+public class FamilyMembership extends Membership{
     private int extraMembers;
 
     public FamilyMembership(String memberName, int months, BigDecimal baseRate, int extraMembers) {

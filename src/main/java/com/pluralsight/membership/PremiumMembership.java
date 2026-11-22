@@ -2,7 +2,7 @@ package com.pluralsight.membership;
 
 import java.math.BigDecimal;
 
-public class PremiumMembership extends Member{
+public class PremiumMembership extends Membership{
     private int guestPasses;
 
     public PremiumMembership(String memberName, int months, BigDecimal baseRate, int guestPasses) {
