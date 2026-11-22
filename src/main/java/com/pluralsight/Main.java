@@ -40,10 +40,25 @@ public class Main {
         System.out.println(membership6);
         System.out.println(membership7);
         System.out.println("--- Guest passes ---");
+        //
         membership4.useGuestPass();
         membership4.useGuestPass();
         membership4.useGuestPass();
         membership5.useGuestPass();
+        System.out.println("--- Sign-up fee and contract total ---");
+        // Displays Fee and Total for member
+        System.out.println(membership1.getMemberName() +": Fee $" + membership1.getSignUpFee()
+                +", Total $" + membership1.getContractTotal());
+
+        System.out.println(membership4.getMemberName() +": Fee $" + membership4.getSignUpFee()
+                +", Total $" + membership4.getContractTotal());
+
+        System.out.println(membership5.getMemberName() +": Fee $" + membership5.getSignUpFee()
+                +", Total $" + membership5.getContractTotal());
+
+        System.out.println(membership6.getMemberName() +": Fee $" + membership6.getSignUpFee()
+                +", Total $" + membership6.getContractTotal());
+
 
     }
 }

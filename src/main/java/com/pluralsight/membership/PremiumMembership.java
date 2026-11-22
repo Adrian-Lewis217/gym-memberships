@@ -35,6 +35,17 @@ public class PremiumMembership extends Membership{
     }
 
     @Override
+    public BigDecimal getSignUpFee() {
+        BigDecimal fee;
+        if (getMonths() >= 12){
+            fee = BigDecimal.valueOf(0.00).setScale(2);
+        } else {
+            fee = BigDecimal.valueOf(49.00).setScale(2);
+        }
+        return fee;
+    }
+
+    @Override
     public String toString() {
         return getMemberName() + ", " + getMonths() + " months" + ", $" + getMonthlyPrice(getBaseRate()) + " per month";
     }
