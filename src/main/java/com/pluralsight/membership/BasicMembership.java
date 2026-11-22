@@ -21,7 +21,7 @@ public class BasicMembership extends Membership{
     public BasicMembership(String memberName, int months, BigDecimal baseRate) {
         super(memberName, months, baseRate);
     }
-
+    // java: com.pluralsight.membership.BasicMembership is not abstract and does not override abstract method getMonthlyPrice(java.math.BigDecimal) in com.pluralsight.membership.Membership
     @Override
     public BigDecimal getMonthlyPrice(BigDecimal baseRate) {
         if (isOffPeakOnly()){
