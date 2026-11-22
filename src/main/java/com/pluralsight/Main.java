@@ -86,6 +86,19 @@ public class Main {
         System.out.println("Memberships: " + members.size());
         System.out.println("Monthly income: " + monthlyIncome);
         System.out.println("All contracts: " + allContracts);
+        System.out.println("--- Front desk notes ---");
+
+        for (Member member : members) {
+            if (member instanceof BasicMembership && ((BasicMembership) member).isOffPeakOnly()){
+                System.out.println(member.getMemberName() + ": entry between 10:00 and 16:00 only");
+            } else if (member instanceof PremiumMembership) {
+                ((PremiumMembership) member).useGuestPass();
+                /*System.out.println(member.getMemberName() + " used a guest pass. Passes left: " + ((PremiumMembership) member).getGuestPasses());*/
+            } else if (member instanceof FamilyMembership) {
+                int keyCards = ((FamilyMembership) member).getExtraMembers() + 1;
+                System.out.println(member.getMemberName() + ": print " + keyCards + " key cards");
+            }
+        }
 
     }
 }
