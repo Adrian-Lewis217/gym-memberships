@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import com.pluralsight.membership.BasicMembership;
+import com.pluralsight.membership.FamilyMembership;
 import com.pluralsight.membership.Membership;
 import com.pluralsight.membership.PremiumMembership;
 
@@ -25,8 +26,10 @@ public class Main {
                 ,new BigDecimal("30.00"),2);
         PremiumMembership membership5 = new PremiumMembership("Frank Miller",3
                 ,new BigDecimal("30.00"),0);
-        // ("Grace Lee",12,new BigDecimal("30.00"),3)
-        // ("Emma Wilson",6,new BigDecimal("30.00"),1)
+        FamilyMembership membership6 = new FamilyMembership("Grace Lee",12
+                ,new BigDecimal("30.00"),3);
+        FamilyMembership membership7 = new FamilyMembership ("Emma Wilson",6
+                ,new BigDecimal("30.00"),1);
 
         // Display memberships
         System.out.println(membership1);
@@ -34,6 +37,8 @@ public class Main {
         System.out.println(membership3);
         System.out.println(membership4);
         System.out.println(membership5);
+        System.out.println(membership6);
+        System.out.println(membership7);
         System.out.println("--- Guest passes ---");
         membership4.useGuestPass();
         membership4.useGuestPass();
