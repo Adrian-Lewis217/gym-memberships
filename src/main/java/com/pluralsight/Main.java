@@ -16,8 +16,8 @@ public class Main {
         System.out.println(membership);*/
 
         // Objects for Members
-        BasicMembership membership1 = new BasicMembership("Henry Clark",3
-                ,new BigDecimal("30.00"),false);
+        Membership membership1 = new Membership("Henry Clark",3
+                ,new BigDecimal("30.00"));
         BasicMembership membership2 = new BasicMembership("Alice Johnson",6
                 ,new BigDecimal("30.00"),true);
         BasicMembership membership3 = new BasicMembership("Bob Smith",2

@@ -2,7 +2,7 @@ package com.pluralsight.membership;
 
 import java.math.BigDecimal;
 
-public class BasicMembership extends Membership{
+public class BasicMembership extends Member{
     private boolean offPeakOnly = true;
 
     public boolean isOffPeakOnly() {
@@ -18,6 +18,10 @@ public class BasicMembership extends Membership{
         this.offPeakOnly = offPeakOnly;
     }
 
+    public BasicMembership(String memberName, int months, BigDecimal baseRate) {
+        super(memberName, months, baseRate);
+    }
+
     @Override
     public BigDecimal getMonthlyPrice(BigDecimal baseRate) {
         if (isOffPeakOnly()){
@@ -28,6 +32,7 @@ public class BasicMembership extends Membership{
 
     @Override
     public String toString() {
-        return getMemberName() + ", " + getMonths() + " months" + ", $" + getMonthlyPrice(getBaseRate()) + " per month";
+        return "Basic" + " | " + getMemberName() + " | " + getMonths() + " months" + " | off-peak only: "
+                + isOffPeakOnly();
     }
 }

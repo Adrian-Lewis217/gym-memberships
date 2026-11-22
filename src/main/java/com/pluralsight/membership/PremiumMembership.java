@@ -2,7 +2,7 @@ package com.pluralsight.membership;
 
 import java.math.BigDecimal;
 
-public class PremiumMembership extends Membership{
+public class PremiumMembership extends Member{
     private int guestPasses;
 
     public PremiumMembership(String memberName, int months, BigDecimal baseRate, int guestPasses) {
@@ -24,7 +24,7 @@ public class PremiumMembership extends Membership{
 
             System.out.println(getMemberName() + " used a guest pass. Passes left: " + guestPasses);
         } else {
-            System.out.println("Sorry, " + getMemberName() + " has no guest passes left.");
+            System.out.println(getMemberName() + " has no guest passes left.");
         }
     }
 
@@ -47,6 +47,7 @@ public class PremiumMembership extends Membership{
 
     @Override
     public String toString() {
-        return getMemberName() + ", " + getMonths() + " months" + ", $" + getMonthlyPrice(getBaseRate()) + " per month";
+        return "Premium" + " | " + getMemberName() + " | " + getMonths() + " months" + " | guest passes: "
+                + getGuestPasses();
     }
 }
