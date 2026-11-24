@@ -1,4 +1,4 @@
-# Project Title
+# Gym Membership
 
 <!-- HOW TO USE THIS TEMPLATE
      Save it as README.md at the root of your project, next to pom.xml. Replace every comment like this one
@@ -8,12 +8,14 @@
 
 <!-- One sentence under the title: what the app is, for whom.
      Example: A console app that keeps a store's inventory in a csv file and lets a clerk search it. -->
-
+This is a console app that show the three types of membership for each member and their contracts.
 ## Description of the Project
 
 <!-- Three to five sentences. What the application does, who uses it, what problem it solves.
      Write it for someone who has never seen the workbook: a recruiter, a classmate, you in six months. -->
-
+This is a gym membership management application that helps gym owners keep track of their members, contracts, and payments. 
+Employees can easily view current memberships, monitor fees and monthly payments, and organize members based on their plan type, such as Basic, Premium, or Family. 
+The goal is to simplify membership management and keep everything organized and accessible.
 ## Class Diagram
 
 <!-- OPTIONAL. Only when the project asks for one (Capstone 2 onward). Export the diagram as a PNG into the
@@ -31,18 +33,9 @@
      - Shows every product in the store
      - Searches products by name (bonus) -->
 
--
--
--
-
-## User Stories
-
-<!-- The stories you worked from, one per bullet, in the format you learned in Workbook 3b:
-     As a [type of user], I want [some goal] so that [some reason].
-     Same text as the cards on your GitHub project board. -->
-
-- As a ..., I want ..., so that ...
-- As a ..., I want ..., so that ...
+- Display all members and their information
+- shows total of membership,monthly income, and contracts
+- Display the types of memberships for each member
 
 ## Setup
 
@@ -58,17 +51,6 @@
 3. Wait for IntelliJ to finish indexing (progress bar at the bottom).
 4. Open `src/main/java/com/pluralsight/YourMainClassName.java`. <!-- replace YourMainClassName with the class that has main -->
 5. Right-click inside the file and choose Run 'YourMainClassName.main()'.
-
-### Data and configuration
-
-<!-- OPTIONAL. Anything the program needs that is not code: data files and where they must sit, files the
-     program creates, a database script to run first, a settings file to edit (connection, port).
-     If there is nothing, delete this subsection, heading included.
-     Example:
-     - `inventory.csv` sits at the project root, next to `pom.xml`. The program reads it at start.
-     - `logs.txt` is created by the program at the project root on the first run. -->
-
--
 
 ## Technologies Used
 
@@ -91,9 +73,9 @@
      Optional GIF: LICEcap (free, Windows and Mac, <https://www.cockos.com/licecap/>) records a region of the
      screen straight to a .gif. Keep it under 10 seconds and under 10 MB, save it into `images`. -->
 
-![Main menu](images/menu.png)
 
-![One feature in action](images/feature.png)
+
+![One feature in action](images/Display.png)
 
 ## A piece of code I am proud of
 
@@ -102,31 +84,39 @@
      demo day and what you talk about in an interview. -->
 
 ```java
-
+for (Membership member : members) {
+            if (member instanceof BasicMembership && ((BasicMembership) member).isOffPeakOnly()){
+                System.out.println(member.getMemberName() + ": entry between 10:00 and 16:00 only");
+            } else if (member instanceof PremiumMembership) {
+                ((PremiumMembership) member).useGuestPass();
+                /*System.out.println(member.getMemberName() + " used a guest pass. Passes left: " + ((PremiumMembership) member).getGuestPasses());*/
+            } else if (member instanceof FamilyMembership) {
+                int keyCards = ((FamilyMembership) member).getExtraMembers() + 1;
+                System.out.println(member.getMemberName() + ": print " + keyCards + " key cards");
+            }
+        }
 ```
+This is a for each loop that will check if the member is part of a specific call and call their own methods.
+I am proud of this code because it was one of the concepts we learn that I didn't fully understand but was interested in using it.
+Now I have a better understanding of it and how to use it in future work.
+
 
 ## Future Work
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
--
--
+- add a while loop and switch case, so gym owners or employees can add,remove, or search for memberships 
+- make a way for gyms to add, remove, or replace memberships for old or new members
 
 ## Resources
 
 <!-- What helped you: the workbook, the week's hub pages, a tutorial, a documentation page. Real links. -->
 
 - Java YearUp Fall 2026 hub: <https://raymaroun.github.io/yearup-java-fall2026/>
--
+- Copilot AI agent: <https://copilot.cloud.microsoft/chat/agent/T_20b53e3f-d488-d128-27fc-440ed32e7a02.eade2051-4773-4cb0-aa3e-b17cdf11ebd4.gpt.17fde386-a7a1-4dd0-a089-a0b0a70bb567?fromcode=cmmu8qodiz1&lhredirected=1&es=AutoSignIn>
 
 ## Author
 
 <!-- Your name and, if you like, your GitHub profile link. For a team workshop, one line per person with what each one built. -->
 
-- **Your Name**
-
-## Thanks
-
-<!-- Optional. The people who helped: the instructor, a classmate who debugged with you, a mentor. -->
-
-- Thank you to ... for ...
+- **Adrian Lewis**
