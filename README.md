@@ -34,7 +34,7 @@ The goal is to simplify membership management and keep everything organized and 
      - Searches products by name (bonus) -->
 
 - Display all members and their information
-- shows total of membership,monthly income, and contracts
+- Shows total of membership,monthly income, and contracts
 - Display the types of memberships for each member
 
 ## Setup
@@ -96,8 +96,8 @@ for (Membership member : members) {
             }
         }
 ```
-This is a for each loop that will check if the member is part of a specific call and call their own methods.
-I am proud of this code because it was one of the concepts we learn that I didn't fully understand but was interested in using it.
+This is a for each loop that will check if the member is part of a specific class and call their own class methods.
+I am proud of this code because it was one of the concepts we learn that I didn't feel sure about but was interested in using it.
 Now I have a better understanding of it and how to use it in future work.
 
 
@@ -105,8 +105,8 @@ Now I have a better understanding of it and how to use it in future work.
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
-- add a while loop and switch case, so gym owners or employees can add,remove, or search for memberships 
-- make a way for gyms to add, remove, or replace memberships for old or new members
+- Add a while loop and switch case, so gym owners or employees can add,remove, or search for memberships 
+- Make a way for gyms to add, remove, or replace memberships for old or new members
 
 ## Resources
 
